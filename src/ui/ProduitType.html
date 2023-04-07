@@ -114,7 +114,6 @@
                   <a class="nav-link" href="ajouter.html">Ajouter</a>
                 </nav>
               </div>
-              
             </div>
           </div>
           <div class="sb-sidenav-footer">
@@ -126,105 +125,52 @@
       <div id="layoutSidenav_content">
         <main>
           <div class="container-fluid px-4">
-            <h1 class="mt-4">Ajouter une pièce</h1>
+            <h1 class="mt-4">Produits par type - Distribution</h1>
             <ol class="breadcrumb mb-4">
-              <li class="breadcrumb-item active">Ajouter votre pièce à l'aide de ce formulaire</li>
+              <li class="breadcrumb-item active">Produits par type</li>
             </ol>
             <div class="row">
               <div class="col-xl-3 col-md-6">
-                <div class="card bg-primary text-white mb-4">
+                <div class="card bg-warning text-white mb-4">
                   <div class="card-body">
-                    <a class="nav-link" href="index.html"> Liste des produits </a>
+                    <a class="nav-link" href="index.html">
+                      Liste de tout les produits
+                    </a>
                   </div>
                 </div>
               </div>
               <div class="col-xl-3 col-md-6">
-                <div class="card bg-warning text-white mb-4">
+                <div class="card bg-primary text-white mb-4">
                   <div class="card-body">
-                    <a class="nav-link" href="ProduitType.html"> Liste des produits par type </a>
+                    <a class="nav-link" href="ajouter.html"> Ajouter </a>
                   </div>
                 </div>
               </div>
             </div>
-            
-            <div class="container">
-              <div class="card mb-4">
-                <div class="card-header">
-                    <i class="fas fa-table me-1"></i>
-                   Ajouter une pièce
-                </div>
-                <div class="card-body">
-                    <form id="AjoutForm">
-                        <div class="row mb-3">
-                            <div class="col-md-12">
-                                <div class="form-floating mb-3 mb-md-0">
-                                    <input class="form-control" id="nompiece" type="text" placeholder="XX-XXX-XX" />
-                                    <label for="nompiece">Nom de la piece</label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row mb-3">
-                            <div class="col-md-6">
-                                <div class="form-floating mb-3 mb-md-0">
-                                    <input class="form-control" id="prix" type="number" placeholder="Prix" />
-                                    <label for="prix">Prix</label>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-floating">
-                                    <input class="form-control" id="stock" type="number" placeholder="Prénom du chauffeur" />
-                                    <label for="stock">Stock</label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row mb-3">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <select id="typepiece" class="form-control">
-                                        <option value="N.C">Choisir type de pièce</option>
-                                        <option value="Moteur">Moteur</option>
-                                        <option value="Distribution">Distribution</option>
-                                        <option value="Turbos">Turbos</option>
-                                        <option value="Amortisseurs">Amortisseurs</option>
-                                    </select>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                            <select id="marque" class="form-control" placeholder="Marque">
-                                <option value="N.C">Choisir la marque</option>
-                                <option value="N.C">Marque</option>
-                                <option value="Bosh">Bosh</option>
-                                <option value="Inkonito">Inkonito</option>
-                            </select>
-                        </div>
-                        </div>
-                        </div>
-                        <div class="row mb-3">                 
-                            <div class="col-md-12">
-                              <div class="form-group">
-                                <label for="description">Description</label>
-                                <textarea
-                                  id="description"
-                                  class="form-control"
-                                  placeholder="Ajouter une description pour la pièce."
-                                  rows="4"
-                                  required="required"
-                                  data-error="Merci d'entrer une description pour la pièce."
-                                ></textarea>
-                              </div>
-                            </div>
-                        </div>
-                        <div class="mt-4 mb-0">
-                            <div class="d-grid">                                        
-                            
-                            </div>
-                        </div>
-                        <button type="submit" class="btn btn-primary">
-                            Ajouter
-                          </button>
-                    </form>
-                </div>         
+
+            <div class="card mb-4">
+              <div class="card-header">
+                <i class="fas fa-table me-1"></i>
+                Base de donnée - Stockage - Distribution
+              </div>
+              <div class="card-body">
+                <table id="datatablesSimple">
+                  <thead>
+                    <tr>
+                      <th>Identifiant</th>
+                      <th>Type de pièce</th>
+                      <th>Nom</th>
+                      <th>Marque</th>
+                      <th>Prix</th>
+                      <th>Description</th>
+                      <th>Stock</th>
+                      <th>Modif</th>
+                      <th>Supp</th>
+                    </tr>
+                  </thead>
+                  <tbody id="data-piece-by-type"></tbody>
+                </table>
+              </div>
             </div>
           </div>
         </main>
@@ -253,13 +199,11 @@
       src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"
       crossorigin="anonymous"
     ></script>
-    <script src="assets/demo/chart-area-demo.js"></script>
-    <script src="assets/demo/chart-bar-demo.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js"
       crossorigin="anonymous"
     ></script>
     <script src="js/datatables-simple-demo.js"></script>
+    <script src="../js/listByType.js"></script>
   </body>
-  <script src="../js/ajouter.js"></script>
 </html>
