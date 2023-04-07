@@ -2,17 +2,31 @@
 
 ## Context
 
-Simple project to discover Electron using HTML, CSS and JS.
+In this fictitious project we carried out a CRUD (Create, Read, Update, Delete) in order to manage the interventions of the Sogecore garage service.
 
-In this project I implemented a simple CRUD (Create, Read, Update, Delete) product.
+As a bonus, authentication and a search function have been added.
 
-## Mise en place du projet 
+Electron project with HTML, CSS and JS.
+
+## Deployment of the project
 
 ### 1. Install node-modules
+
     $ npm install
 
-### . Start the project
+### 2. Create database
 
-	$ npm start
+In src/js/database.js, you need to change the value.
 
-### 3. Enjoy =)
+    $ 	const connection = mysql.createConnection({
+    		host: "your-host",
+    		user: "name-user",
+    		password: "password-user",
+    		database: "name-database",
+    	});
+
+### 3. Start the project
+
+    $ npm start
+
+### 4. Enjoy =)
